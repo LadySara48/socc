@@ -1281,42 +1281,6 @@ Block_Mask.TextSize = 16.000
 Block_Mask.TextWrapped = true
  
 -- Scripts:
-
-local LocalPlayer2 = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer2.Character
-local LockedPlayer = nil
-local Aimlock = nil
-
-local mt = getrawmetatable(game)
-local namecall = mt.__namecall
-setreadonly(mt, false)
-
-if getrawmetatable then
-    local mt = getrawmetatable(game)
-    local namecall = mt.__namecall
-    setreadonly(mt, false)
-    
-    mt.__namecall = newcclosure(function(table, ...)
-        local args = {...}
-        local method = getnamecallmethod()
-        if method == "FireServer" and args[1] and args[1] == "UpdateMousePos" then
-            if not (args[3] and args[3] == "Aimlock") then
-                return nil
-            end
-        end
-        return namecall(table, ...)
-    end) 
-end
-
-local function FindPlrOnMouse()
-    for i, v in pairs(game.Workspace:FindPartsInRegion3(Region3.new(LocalPlayer2:GetMouse().Hit.Position, LocalPlayer2:GetMouse().Hit.Position))) do
-        local plr = game.Players:GetPlayerFromCharacter(v.Parent)
-        if plr ~= nil and plr ~= LocalPlayer2 then
-            return plr
-        end
-    end
-    return nil
-end
  
 local function SIPVXEH_fake_script() -- Waypoints.Waypoint 
 	local script = Instance.new('LocalScript', Waypoints)
@@ -1653,87 +1617,7 @@ local function YROOI_fake_script() -- Main_Scripts_2.Main_Shortener
  
 	script.Parent.Invis.MouseButton1Click:Connect(function(Invis)
     
-    for i, v in pairs(LocalPlayer2.Backpack:GetChildren()) do
-        if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
-            v:Destroy() 
-        end
-    end
-    for i, v in pairs(LocalPlayer2.Character:GetChildren()) do
-        if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
-            v:Destroy() 
-        elseif v.ClassName == "Tool" then
-            v.Parent = LocalPlayer2.Backpack
-        end
-    end
-    
-    local AimlockTool = Instance.new("Tool")
-    AimlockTool.Name = "Lock Esya"
-    AimlockTool.Parent = LocalPlayer2.Backpack
-    AimlockTool.RequiresHandle = false
-    AimlockTool.TextureId = "rbxasset://1532350639"
-    
-    AimlockTool.Activated:Connect(function()
-        local Plr = FindPlrOnMouse()
-        
-        if Plr ~= nil and Plr.Character and Plr.Character:FindFirstChild("Head") and Plr.Character:FindFirstChild("UpperTorso") then
-            Aimlock = Plr 
-            
-            game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Vur" .. Plr.Name;
-                Text = "Saldırıya başlayabilirsin.";
-                Button1 = "Ok";
-                Duration = 2.5;
-            })
-        else
-            Aimlock = nil
-            
-            game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Bosluk";
-                Text = "Lock durduruldu";
-                Button1 = "Ok";
-                Duration = 2.5;
-            })
-        end
-    end)
 	end)
-	
-	
-	if getrawmetatable then
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
-            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position, "Aimlock")
-        elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
-            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position, "Aimlock")
-        elseif Aimlock == nil then
-            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", game:GetService("Players").LocalPlayer:GetMouse().Hit.Position, "Aimlock")
-        end
-    end)
-else
-    for i = 1, 10 do
-        game:GetService("RunService").Heartbeat:Connect(function()
-            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
-            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
-            end
-        end)
-        game:GetService("RunService").RenderStepped:Connect(function()
-            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
-            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
-            end
-        end)
-        game:GetService("RunService").Stepped:Connect(function()
-            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
-            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
-                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
-            end
-        end)
-    end
-end
-	
 	
     speeds = 7
 	local speaker = game:GetService("Players").LocalPlayer
@@ -2192,28 +2076,6 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	end)
 	
 	script.Parent.Lock_Player.MouseButton1Click:Connect(function(LOCKPLAYER)
-	local Username = script.Parent.Target_Box.Text
-	local Plr2 = game.Players:FindFirstChild(Username)
-	
-	if Plr2 ~= nil and Plr2.Character and Plr2.Character:FindFirstChild("Head") and Plr2.Character:FindFirstChild("UpperTorso") then
-            Aimlock = Plr2
-            
-            game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Vur" .. Plr2.Name;
-                Text = "Saldırabilirsin.";
-                Button1 = "Ok";
-                Duration = 2;
-            })
-        else
-            Aimlock = nil
-            
-            game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Bosluk";
-                Text = "No player clicked on, aimlocking towards mouse as normal";
-                Button1 = "Ok";
-                Duration = 2.5;
-            })
-        end
 	
 	end)
 	
