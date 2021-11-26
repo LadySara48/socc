@@ -122,7 +122,7 @@ local Search_Player = Instance.new("TextButton")
 local Go_Player = Instance.new("TextButton")
 local Player_Money = Instance.new("TextLabel")
 local Lock_Player = Instance.new("TextButton")
-
+local Annoy = Instance.new("TextButton")
  
 Da_HoodGUI.Name = "Evons Gui"
 Da_HoodGUI.Parent = game.CoreGui
@@ -1059,11 +1059,22 @@ Lock_Player.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Lock_Player.Position = UDim2.new(0.0714093095, 0, 0.731384776, 0)
 Lock_Player.Size = UDim2.new(0.35176304, 0, 0.0971070603, 0)
 Lock_Player.Font = Enum.Font.Cartoon
-Lock_Player.Text = "Lock"
+Lock_Player.Text = "Head Annoy"
 Lock_Player.TextColor3 = Color3.fromRGB(255, 255, 255)
 Lock_Player.TextSize = 16.000
 Lock_Player.TextWrapped = true
 
+Annoy.Name = "Annoy"
+Annoy.Parent = Miscellaneous_2
+Annoy.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Annoy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Annoy.Position = UDim2.new(0.0714093095, 0, 0.861384776, 0)
+Annoy.Size = UDim2.new(0.35176304, 0, 0.0971070603, 0)
+Annoy.Font = Enum.Font.Cartoon
+Annoy.Text = "Annoy"
+Annoy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Annoy.TextSize = 16.000
+Annoy.TextWrapped = true
 
 Player_Money.Name = "Da_Hood_Credits91"
 Player_Money.Parent = Miscellaneous_2
@@ -1281,6 +1292,13 @@ Block_Mask.TextSize = 16.000
 Block_Mask.TextWrapped = true
  
 -- Scripts:
+ 
+ game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Burcin<3Sara";
+                Text = "Script yuklendi. Iyi eglenceler";
+                Button1 = "Ok";
+                Duration = 2.5;
+            })
  
 local function SIPVXEH_fake_script() -- Waypoints.Waypoint 
 	local script = Instance.new('LocalScript', Waypoints)
@@ -2075,8 +2093,52 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 		plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,4,0)
 	end)
 	
+	HeadTPS = false
+	OldX = -485.668
+	OldY = 23.631
+	OldZ = -285.169
 	script.Parent.Lock_Player.MouseButton1Click:Connect(function(LOCKPLAYER)
+	HeadTPS = not HeadTPS
+	if HeadTPS == true then
+	Lock_Player.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
+	OldX = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
+	OldY = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
+	OldZ = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+	else
+	Lock_Player.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
+	end
 	
+	game:GetService('RunService').Stepped:connect(function() 
+	if HeadTPS then
+	local Username = script.Parent.Target_Box.Text
+	local plr2 = game.Players:FindFirstChild(Username)
+	plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
+	end
+	end)
+	end)
+	
+	anny = false
+	script.Parent.Annoy.MouseButton1Click:Connect(function(ANNOY)
+	anny = not anny
+	if anny == true then
+	Annoy.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
+	OldX = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
+	OldY = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
+	OldZ = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+	else
+	Annoy.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
+	end
+	
+	game:GetService('RunService').Stepped:connect(function() 
+	if anny then
+	local Username = script.Parent.Target_Box.Text
+	local plr2 = game.Players:FindFirstChild(Username)
+	plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,0)
+	--plr.Character.HumanoidRootPart.Velocity = plr.Character.HumanoidRootPart.CFrame.lookVector * 160
+	end
+	end)
 	end)
 	
 end
