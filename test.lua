@@ -2178,7 +2178,7 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	StealIDs.Text = "MusicID: " .. ids
 	 game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Music ID";
-                Text = "Muzik ID si " .. ids .. " Gule gule kullan";
+                Text = "Muzik ID si " .. ids .. " ID Otomatik kopyalandi kullanabilirsin";
                 Button1 = "Ok";
                 Duration = 16;
             })
