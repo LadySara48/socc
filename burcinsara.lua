@@ -121,8 +121,10 @@ local Target_Box = Instance.new("TextBox")
 local Search_Player = Instance.new("TextButton")
 local Go_Player = Instance.new("TextButton")
 local Player_Money = Instance.new("TextLabel")
+local StealIDs = Instance.new("TextLabel")
 local Lock_Player = Instance.new("TextButton")
 local Annoy = Instance.new("TextButton")
+local RadSteal = Instance.new("TextButton")
  
 Da_HoodGUI.Name = "Evons Gui"
 Da_HoodGUI.Parent = game.CoreGui
@@ -1045,7 +1047,7 @@ Anti_AFK.Parent = Miscellaneous_2
 Anti_AFK.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Anti_AFK.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Anti_AFK.Position = UDim2.new(0.0714093095, 0, 0.601384776, 0)
-Anti_AFK.Size = UDim2.new(0.35176304, 0, 0.0971070603, 0)
+Anti_AFK.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
 Anti_AFK.Font = Enum.Font.Cartoon
 Anti_AFK.Text = "Go To"
 Anti_AFK.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1057,7 +1059,7 @@ Lock_Player.Parent = Miscellaneous_2
 Lock_Player.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Lock_Player.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Lock_Player.Position = UDim2.new(0.0714093095, 0, 0.731384776, 0)
-Lock_Player.Size = UDim2.new(0.35176304, 0, 0.0971070603, 0)
+Lock_Player.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
 Lock_Player.Font = Enum.Font.Cartoon
 Lock_Player.Text = "Head Annoy"
 Lock_Player.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1069,25 +1071,50 @@ Annoy.Parent = Miscellaneous_2
 Annoy.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Annoy.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Annoy.Position = UDim2.new(0.0714093095, 0, 0.861384776, 0)
-Annoy.Size = UDim2.new(0.35176304, 0, 0.0971070603, 0)
+Annoy.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
 Annoy.Font = Enum.Font.Cartoon
 Annoy.Text = "Annoy"
 Annoy.TextColor3 = Color3.fromRGB(255, 255, 255)
 Annoy.TextSize = 16.000
 Annoy.TextWrapped = true
 
+RadSteal.Name = "RadSteal"
+RadSteal.Parent = Miscellaneous_2
+RadSteal.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RadSteal.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RadSteal.Position = UDim2.new(0.5314093095, 0, 0.601384776, 0)
+RadSteal.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
+RadSteal.Font = Enum.Font.Cartoon
+RadSteal.Text = "Radio Steal"
+RadSteal.TextColor3 = Color3.fromRGB(255, 255, 255)
+RadSteal.TextSize = 16.000
+RadSteal.TextWrapped = true
+
 Player_Money.Name = "Da_Hood_Credits91"
 Player_Money.Parent = Miscellaneous_2
 Player_Money.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Player_Money.BackgroundTransparency = 1.000
-Player_Money.Position = UDim2.new(0.0714093095, 0, 0.451384776, 0)
-Player_Money.Size = UDim2.new(0.579502583, 0, 0.165146858, 0)
+Player_Money.Position = UDim2.new(0.0714093095, 0, 0.491384776, 0)
+Player_Money.Size = UDim2.new(0.439502583, 0, 0.105146858, 0)
 Player_Money.Font = Enum.Font.Code
 Player_Money.Text = "Money: $"
 Player_Money.TextColor3 = Color3.fromRGB(255, 255, 255)
 Player_Money.TextScaled = true
-Player_Money.TextSize = 14.000
+Player_Money.TextSize = 12.000
 Player_Money.TextWrapped = true
+
+StealIDs.Name = "Da_Hood_Credits92"
+StealIDs.Parent = Miscellaneous_2
+StealIDs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StealIDs.BackgroundTransparency = 1.000
+StealIDs.Position = UDim2.new(0.0714093095, 0, 0.391384776, 0)
+StealIDs.Size = UDim2.new(0.439502583, 0, 0.105146858, 0)
+StealIDs.Font = Enum.Font.Code
+StealIDs.Text = "MusicID: "
+StealIDs.TextColor3 = Color3.fromRGB(255, 255, 255)
+StealIDs.TextScaled = true
+StealIDs.TextSize = 12.000
+StealIDs.TextWrapped = true
  
 Back_Frame_6.Name = "Back_Frame"
 Back_Frame_6.Parent = Miscellaneous_2
@@ -1295,7 +1322,7 @@ Block_Mask.TextWrapped = true
  
  game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Burcin<3Sara";
-                Text = "Script yuklendi. Iyi eglenceler v1.0";
+                Text = "Script yuklendi. Iyi eglenceler v1.1";
                 Button1 = "Ok";
                 Duration = 2.5;
             })
@@ -2085,6 +2112,13 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	local Username = script.Parent.Target_Box.Text
 	local plr2 = game.Players:FindFirstChild(Username)
 	Player_Money.Text = "Money: " .. plr2.DataFolder.Currency.Value .. "$"
+	if plr2 ~= nil then
+	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
+	local ids = string.sub(TheId, 14)
+	if TheId ~= nil then
+	StealIDs.Text = "MusicID: " .. ids
+	end
+	end
 	end)
 	
 	script.Parent.Anti_AFK.MouseButton1Click:Connect(function(ANTIAFK)
@@ -2136,9 +2170,28 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	local Username = script.Parent.Target_Box.Text
 	local plr2 = game.Players:FindFirstChild(Username)
 	plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,0)
-	--plr.Character.HumanoidRootPart.Velocity = plr.Character.HumanoidRootPart.CFrame.lookVector * 160
+	plr.Character.HumanoidRootPart.Velocity = plr.Character.HumanoidRootPart.CFrame.lookVector * 160
 	end
 	end)
+	end)
+	
+	script.Parent.RadSteal.MouseButton1Click:Connect(function(RADSTEAL)
+	local Username = script.Parent.Target_Box.Text
+	local plr2 = game.Players:FindFirstChild(Username)
+	if plr2 ~= nil then
+	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
+	local ids = string.sub(TheId, 14)
+	if TheId ~= nil then
+	StealIDs.Text = "MusicID: " .. ids
+	 game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Music ID";
+                Text = "Muzik ID si " .. ids .. " ID Otomatik kopyalandi kullanabilirsin";
+                Button1 = "Ok";
+                Duration = 8;
+            })
+			setclipboard(ids)
+	end
+	end
 	end)
 	
 end
