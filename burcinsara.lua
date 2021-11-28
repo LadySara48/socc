@@ -125,6 +125,8 @@ local StealIDs = Instance.new("TextLabel")
 local Lock_Player = Instance.new("TextButton")
 local Annoy = Instance.new("TextButton")
 local RadSteal = Instance.new("TextButton")
+local ViewPlayer = Instance.new("TextButton")
+local TargetP = Instance.new("TextButton")
  
 Da_HoodGUI.Name = "Evons Gui"
 Da_HoodGUI.Parent = game.CoreGui
@@ -1030,18 +1032,6 @@ Target_Box.Text = ""
 Target_Box.TextColor3 = Color3.fromRGB(255, 255, 255)
 Target_Box.TextSize = 14.000
  
-Search_Player.Name = "Search_Player"
-Search_Player.Parent = Miscellaneous_2
-Search_Player.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Search_Player.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Search_Player.Position = UDim2.new(0.0714093095, 0, 0.304567887, 0)
-Search_Player.Size = UDim2.new(0.85176304, 0, 0.0971070603, 0)
-Search_Player.Font = Enum.Font.Cartoon
-Search_Player.Text = "Search"
-Search_Player.TextColor3 = Color3.fromRGB(255, 255, 255)
-Search_Player.TextSize = 16.000
-Search_Player.TextWrapped = true
- 
 Anti_AFK.Name = "Anti_AFK"
 Anti_AFK.Parent = Miscellaneous_2
 Anti_AFK.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -1090,11 +1080,35 @@ RadSteal.TextColor3 = Color3.fromRGB(255, 255, 255)
 RadSteal.TextSize = 16.000
 RadSteal.TextWrapped = true
 
+ViewPlayer.Name = "ViewPlayer"
+ViewPlayer.Parent = Miscellaneous_2
+ViewPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ViewPlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ViewPlayer.Position = UDim2.new(0.5314093095, 0, 0.731384776, 0)
+ViewPlayer.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
+ViewPlayer.Font = Enum.Font.Cartoon
+ViewPlayer.Text = "View"
+ViewPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+ViewPlayer.TextSize = 16.000
+ViewPlayer.TextWrapped = true
+
+TargetP.Name = "TargetP"
+TargetP.Parent = Miscellaneous_2
+TargetP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TargetP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TargetP.Position = UDim2.new(0.5314093095, 0, 0.861384776, 0)
+TargetP.Size = UDim2.new(0.40176304, 0, 0.0971070603, 0)
+TargetP.Font = Enum.Font.Cartoon
+TargetP.Text = "Target"
+TargetP.TextColor3 = Color3.fromRGB(255, 255, 255)
+TargetP.TextSize = 16.000
+TargetP.TextWrapped = true
+
 Player_Money.Name = "Da_Hood_Credits91"
 Player_Money.Parent = Miscellaneous_2
 Player_Money.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Player_Money.BackgroundTransparency = 1.000
-Player_Money.Position = UDim2.new(0.0714093095, 0, 0.491384776, 0)
+Player_Money.Position = UDim2.new(0.0714093095, 0, 0.401384776, 0)
 Player_Money.Size = UDim2.new(0.439502583, 0, 0.105146858, 0)
 Player_Money.Font = Enum.Font.Code
 Player_Money.Text = "Money: $"
@@ -1107,8 +1121,8 @@ StealIDs.Name = "Da_Hood_Credits92"
 StealIDs.Parent = Miscellaneous_2
 StealIDs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 StealIDs.BackgroundTransparency = 1.000
-StealIDs.Position = UDim2.new(0.0714093095, 0, 0.391384776, 0)
-StealIDs.Size = UDim2.new(0.439502583, 0, 0.105146858, 0)
+StealIDs.Position = UDim2.new(0.0714093095, 0, 0.304567887, 0)
+StealIDs.Size = UDim2.new(0.439502583, 0, 0.125146858, 0)
 StealIDs.Font = Enum.Font.Code
 StealIDs.Text = "MusicID: "
 StealIDs.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1322,7 +1336,7 @@ Block_Mask.TextWrapped = true
  
  game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Burcin<3Sara";
-                Text = "Script yuklendi. Iyi eglenceler v1.1";
+                Text = "Script yuklendi. Iyi eglenceler v1.2 Target ve View ozelligi eklendi";
                 Button1 = "Ok";
                 Duration = 2.5;
             })
@@ -2108,9 +2122,18 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	
 	plr = game:GetService('Players').LocalPlayer
 	
-	script.Parent.Search_Player.MouseButton1Click:Connect(function(SEARCH)
-	local Username = script.Parent.Target_Box.Text
-	local plr2 = game.Players:FindFirstChild(Username)
+	script.Parent.Target_Box.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLost)
+	local plrss = game:GetService("Players")
+	local ttext = script.Parent.Target_Box.Text
+	local prace = true
+	for _, player in pairs(plrss:GetPlayers()) do
+	if prace then
+	if string.len(player.Name) > string.len(ttext) then
+	if string.sub(player.Name, 1, string.len(ttext)) == ttext then
+	
+	prace = false
+	Target_Box.Text = player.Name
+	local plr2 = game.Players:FindFirstChild(player.Name)
 	Player_Money.Text = "Money: " .. plr2.DataFolder.Currency.Value .. "$"
 	if plr2 ~= nil then
 	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
@@ -2119,12 +2142,52 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	StealIDs.Text = "MusicID: " .. ids
 	end
 	end
+	
+	end
+	else
+	if player.Name == ttext then
+	
+	prace = false
+	Target_Box.Text = player.Name
+	local plr2 = game.Players:FindFirstChild(player.Name)
+	Player_Money.Text = "Money: " .. plr2.DataFolder.Currency.Value .. "$"
+	if plr2 ~= nil then
+	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
+	local ids = string.sub(TheId, 14)
+	if TheId ~= nil then
+	StealIDs.Text = "MusicID: " .. ids
+	end
+	end
+	
+	end 
+	end --length
+	end --prace
+	end --for
 	end)
 	
 	script.Parent.Anti_AFK.MouseButton1Click:Connect(function(ANTIAFK)
 		local Username = script.Parent.Target_Box.Text
 		local plr2 = game.Players:FindFirstChild(Username)
-		plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,4,0)
+		plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
+	end)
+	
+	view = true
+	script.Parent.ViewPlayer.MouseButton1Click:Connect(function(VIEWP)
+		local Username = script.Parent.Target_Box.Text
+		local plr2 = game.Players:FindFirstChild(Username)
+		if view then
+		if plr2 ~= nil then
+		ViewPlayer.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
+		ViewPlayer.Text = "Unview"
+		game.Workspace.Camera.CameraSubject = game.Players[Username].Character.Humanoid;
+		view = false
+		end
+		else
+		ViewPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		ViewPlayer.Text = "View"
+		game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+		view = true
+		end
 	end)
 	
 	HeadTPS = false
@@ -2190,6 +2253,72 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
                 Duration = 8;
             })
 			setclipboard(ids)
+	end
+	end
+	end)
+	
+	sss = false
+	ssc = false
+	script.Parent.TargetP.MouseButton1Click:Connect(function(TARGET)
+	local TargetPlr = script.Parent.Target_Box.Text
+	local Username = script.Parent.Target_Box.Text
+	local plr2 = game.Players:FindFirstChild(Username)
+	local localPlayer = game:GetService("Players").LocalPlayer;
+	local localCharacter  = localPlayer.Character;
+	if plr2 ~= nil then
+	if sss == false then
+	TargetP.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
+	sss = true
+	else
+	TargetP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	sss = false
+	end
+	pcall(function()
+	localCharacter.LeftHand.LeftWrist:Destroy();
+	localCharacter.RightHand.RightWrist:Destroy();
+	end)
+	game:GetService('RunService').Stepped:connect(function() 
+	if sss then
+	
+	ssc = true
+	pcall(function()
+	localCharacter.LeftHand.LeftWrist:Destroy();
+	localCharacter.RightHand.RightWrist:Destroy();
+	end)
+	localCharacter.LeftHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
+
+	else
+	
+	if ssc then
+	ssc = false
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.LeftHand.CFrame = localCharacter.LowerTorso.CFrame;
+	localCharacter.RightHand.CFrame = localCharacter.LowerTorso.CFrame;
+	end
+	
+	end
+	end)
+	game:GetService('RunService').Stepped:connect(function() 
+	wait(5)
+	pcall(function()
+	localCharacter.LeftHand.LeftWrist:Destroy();
+	localCharacter.RightHand.RightWrist:Destroy();
+	end)
+	end)
+	else
+	if sss then
+	sss = false
+	TargetP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	end
 	end
 	end)
