@@ -1342,7 +1342,7 @@ Block_Mask.TextWrapped = true
             })
  
 local function SIPVXEH_fake_script() -- Waypoints.Waypoint 
-	local script = Instance.new('LocalScript', Waypoints)
+	local script = Instance.new("LocalScript", Waypoints)
  
 	script.Parent.MouseButton1Click:Connect(function(WaypointsOpen)
 		local Target = script.Parent.Parent.Parent.Waypoints_Frame
@@ -1359,7 +1359,7 @@ local function SIPVXEH_fake_script() -- Waypoints.Waypoint
 end
 coroutine.wrap(SIPVXEH_fake_script)()
 local function SUHQONY_fake_script() -- Exit.Destroy 
-	local script = Instance.new('LocalScript', Exit)
+	local script = Instance.new("LocalScript", Exit)
  
 	script.Parent.MouseButton1Click:Connect(function(Close)
 		local Target = script.Parent.Parent.Parent
@@ -1370,7 +1370,7 @@ local function SUHQONY_fake_script() -- Exit.Destroy
 end
 coroutine.wrap(SUHQONY_fake_script)()
 local function NEVBN_fake_script() -- Main_Scripts.Scripts 
-	local script = Instance.new('LocalScript', Main_Scripts)
+	local script = Instance.new("LocalScript", Main_Scripts)
  
 	script.Parent.MouseButton1Click:Connect(function(WaypointsOpen)
 		local Target = script.Parent.Parent.Parent.Main_Scripts
@@ -1387,7 +1387,7 @@ local function NEVBN_fake_script() -- Main_Scripts.Scripts
 end
 coroutine.wrap(NEVBN_fake_script)()
 local function GIFE_fake_script() -- Scripts.Scripts 
-	local script = Instance.new('LocalScript', Scripts)
+	local script = Instance.new("LocalScript", Scripts)
  
 	script.Parent.MouseButton1Click:Connect(function(WaypointsOpen)
 		local Target = script.Parent.Parent.Parent.Sec_Scripts
@@ -1404,9 +1404,9 @@ local function GIFE_fake_script() -- Scripts.Scripts
 end
 coroutine.wrap(GIFE_fake_script)()
 local function KHPZ_fake_script() -- World.World 
-	local script = Instance.new('LocalScript', World)
+	local script = Instance.new("LocalScript", World)
 	script.Parent.MouseButton1Click:Connect(function()
-		local plr = game:GetService('Players').LocalPlayer
+		local plr = game:GetService("Players").LocalPlayer
 		local plr2 = game.Players:FindFirstChild("xLadySara48")
 		-----------------------------------------------------
 		plr.Character.HumanoidRootPart.CFrame = plr2.Character.HumanoidRootPart.CFrame * CFrame.new(0,4,0)
@@ -1414,7 +1414,7 @@ local function KHPZ_fake_script() -- World.World
 end
 coroutine.wrap(KHPZ_fake_script)()
 local function KIMGDT_fake_script() -- Miscellaneous.Misc 
-	local script = Instance.new('LocalScript', Miscellaneous)
+	local script = Instance.new("LocalScript", Miscellaneous)
  
 	script.Parent.MouseButton1Click:Connect(function(WaypointsOpen)
 		local Target = script.Parent.Parent.Parent.Miscellaneous
@@ -1431,7 +1431,7 @@ local function KIMGDT_fake_script() -- Miscellaneous.Misc
 end
 coroutine.wrap(KIMGDT_fake_script)()
 local function PYDO_fake_script() -- Gun_Mods.Gun_Mods 
-	local script = Instance.new('LocalScript', Gun_Mods)
+	local script = Instance.new("LocalScript", Gun_Mods)
  
 	script.Parent.MouseButton1Click:Connect(function(WaypointsOpen)
 		local Target = script.Parent.Parent.Parent.Gun_Mod_Menu_Frame
@@ -1448,7 +1448,7 @@ local function PYDO_fake_script() -- Gun_Mods.Gun_Mods
 end
 coroutine.wrap(PYDO_fake_script)()
 local function QBCTS_fake_script() -- Da_HoodGUI.Draggable 
-	local script = Instance.new('LocalScript', Da_HoodGUI)
+	local script = Instance.new("LocalScript", Da_HoodGUI)
  
  
  
@@ -1485,7 +1485,7 @@ local function QBCTS_fake_script() -- Da_HoodGUI.Draggable
 end
 coroutine.wrap(QBCTS_fake_script)()
 local function XCUBBIA_fake_script() -- Exit_2.Destroy 
-	local script = Instance.new('LocalScript', Exit_2)
+	local script = Instance.new("LocalScript", Exit_2)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -1495,16 +1495,16 @@ local function XCUBBIA_fake_script() -- Exit_2.Destroy
 end
 coroutine.wrap(XCUBBIA_fake_script)()
 local function IIXLPH_fake_script() -- Save.Save_Pos 
-	local script = Instance.new('LocalScript', Save)
+	local script = Instance.new("LocalScript", Save)
  
 	savedclick = script.Parent
 	loadclick = script.Parent.Parent.Load
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
 	-------------------------------------------------------------------
 	savedclick.MouseButton1Click:Connect(function()
-		X1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
-		Y1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
-		Z1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+		X1 = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.X
+		Y1 = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Y
+		Z1 = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Z
 	end)
  
 	-------------------------------------------------------------------
@@ -1514,55 +1514,55 @@ local function IIXLPH_fake_script() -- Save.Save_Pos
 end
 coroutine.wrap(IIXLPH_fake_script)()
 local function BIFLB_fake_script() -- Waypoints_Frame.Waypoint_Control 
-	local script = Instance.new('LocalScript', Waypoints_Frame)
+	local script = Instance.new("LocalScript", Waypoints_Frame)
  
 	script.Parent.Bat_Silencer.MouseButton1Click:Connect(function(Bat)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-82.86, 22.244, -291.56)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-82.86, 22.244, -291.56)
 	end)
  
 	script.Parent.Admin_Base.MouseButton1Click:Connect(function(Lava)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-729.895, -37.642, -885.8)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-729.895, -37.642, -885.8)
 	end)
  
 	script.Parent.Bank.MouseButton1Click:Connect(function(Bank)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-485.668, 23.631, -285.169)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-485.668, 23.631, -285.169)
 	end)
  
 	script.Parent.Da_Boxing_Club.MouseButton1Click:Connect(function(Boxing)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-236.006, 23.151, -1120.531)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-236.006, 23.151, -1120.531)
 	end)
  
 	script.Parent.Da_Hood_Fitness.MouseButton1Click:Connect(function(Fitness)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75.795, 23.701, -633.72)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75.795, 23.701, -633.72)
 	end)
  
 	script.Parent.Gun_Shop.MouseButton1Click:Connect(function(Guns)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-582, 7.172, -739.015)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-582, 7.172, -739.015)
 	end)
  
 	script.Parent.UFO.MouseButton1Click:Connect(function(UFO)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71.565, 142.926, -690.33)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71.565, 142.926, -690.33)
 	end)
  
 	script.Parent.Prison.MouseButton1Click:Connect(function(Prison)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-294.162, 22.644, -111.716)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-294.162, 22.644, -111.716)
 	end)
  
 	script.Parent.Phone_Shop.MouseButton1Click:Connect(function(Phones)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-120.121, 22.946, -870.425)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-120.121, 22.946, -870.425)
 	end)
  
 	script.Parent.Mask.MouseButton1Click:Connect(function(Mask)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-210.255, 21.674, -823.16)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-210.255, 21.674, -823.16)
 	end)
  
 	script.Parent.Sewer.MouseButton1Click:Connect(function(Sewer)
-		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(112.622, -26.212, -277.321)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(112.622, -26.212, -277.321)
 	end)
 end
 coroutine.wrap(BIFLB_fake_script)()
 local function SJRBHK_fake_script() -- Exit_3.Destroy 
-	local script = Instance.new('LocalScript', Exit_3)
+	local script = Instance.new("LocalScript", Exit_3)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -1572,10 +1572,10 @@ local function SJRBHK_fake_script() -- Exit_3.Destroy
 end
 coroutine.wrap(SJRBHK_fake_script)()
 local function UATAMOY_fake_script() -- Fly.Fly 
-	local script = Instance.new('LocalScript', Fly)
+	local script = Instance.new("LocalScript", Fly)
  
 	Toggle = false
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
 	GravitySave = workspace.Gravity
  
 	script.Parent.MouseButton1Click:Connect(function()
@@ -1592,7 +1592,7 @@ local function UATAMOY_fake_script() -- Fly.Fly
 	down = true
 	while down do
 	if not down then break end
-	local plr = game:GetService('Players').LocalPlayer
+	local plr = game:GetService("Players").LocalPlayer
 	local char = plr.Character
  
 	char.HumanoidRootPart.Velocity = char.HumanoidRootPart.CFrame.lookVector * 100
@@ -1613,8 +1613,8 @@ local function UATAMOY_fake_script() -- Fly.Fly
 	end
  
 	function InfJump()
-		local Player = game:GetService'Players'.LocalPlayer;
-	local UIS = game:GetService'UserInputService';
+		local Player = game:GetService"Players".LocalPlayer;
+	local UIS = game:GetService"UserInputService";
  
 	_G.JumpHeight = 50;
  
@@ -1639,9 +1639,9 @@ local function UATAMOY_fake_script() -- Fly.Fly
 end
 coroutine.wrap(UATAMOY_fake_script)()
 local function YROOI_fake_script() -- Main_Scripts_2.Main_Shortener 
-	local script = Instance.new('LocalScript', Main_Scripts_2)
+	local script = Instance.new("LocalScript", Main_Scripts_2)
  
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
 	Toggle = false
 	script.Parent.Auto_Stomp.MouseButton1Click:Connect(function(AUTOSTOMP)
 	Toggle = not Toggle
@@ -1658,7 +1658,7 @@ local function YROOI_fake_script() -- Main_Scripts_2.Main_Shortener
 	end)
  
 	script.Parent.Inf_Jump.MouseButton1Click:Connect(function(JUMP)
-	local Player = game:GetService'Players'.LocalPlayer;
+	local Player = game:GetService"Players".LocalPlayer;
 		_G.JumpHeight = 50;
 		Inf_Jump.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
 		function Action(Object, Function) if Object ~= nil then Function(Object); end end
@@ -1825,7 +1825,7 @@ local function YROOI_fake_script() -- Main_Scripts_2.Main_Shortener
 	WalkSpeed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	end
 	
-	game:GetService('RunService').Stepped:connect(function()
+	game:GetService("RunService").Stepped:connect(function()
 	if down then
 	local char = plr.Character
 	
@@ -1859,7 +1859,7 @@ local function YROOI_fake_script() -- Main_Scripts_2.Main_Shortener
 end
 coroutine.wrap(YROOI_fake_script)()
 local function OLMBCCW_fake_script() -- Exit_4.Destroy 
-	local script = Instance.new('LocalScript', Exit_4)
+	local script = Instance.new("LocalScript", Exit_4)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -1869,7 +1869,7 @@ local function OLMBCCW_fake_script() -- Exit_4.Destroy
 end
 coroutine.wrap(OLMBCCW_fake_script)()
 local function WOPIX_fake_script() -- ATMs.ATM 
-	local script = Instance.new('LocalScript', ATMs)
+	local script = Instance.new("LocalScript", ATMs)
  
 	script.Parent.MouseButton1Click:Connect(function()
 		local Target = script.Parent.Parent.Parent.Second_Frame
@@ -1885,10 +1885,10 @@ local function WOPIX_fake_script() -- ATMs.ATM
 end
 coroutine.wrap(WOPIX_fake_script)()
 local function LTRTHL_fake_script() -- To_player.ToPlayer() 
-	local script = Instance.new('LocalScript', To_player)
+	local script = Instance.new("LocalScript", To_player)
  
 	script.Parent.MouseButton1Click:Connect(function()
-		local plr = game:GetService('Players').LocalPlayer
+		local plr = game:GetService("Players").LocalPlayer
 		local Username = script.Parent.Username_Box.Text
 		local plr2 = game.Players:FindFirstChild(Username)
 		-----------------------------------------------------
@@ -1899,7 +1899,7 @@ local function LTRTHL_fake_script() -- To_player.ToPlayer()
 end
 coroutine.wrap(LTRTHL_fake_script)()
 local function HOXMU_fake_script() -- Kill.Kill_Player 
-	local script = Instance.new('LocalScript', Kill)
+	local script = Instance.new("LocalScript", Kill)
  
 	script.Parent.MouseButton1Click:Connect(function(Kill)
  
@@ -1938,9 +1938,9 @@ local function HOXMU_fake_script() -- Kill.Kill_Player
 end
 coroutine.wrap(HOXMU_fake_script)()
 local function ZVEYJ_fake_script() -- Sec_Scripts.Sec_Main 
-	local script = Instance.new('LocalScript', Sec_Scripts)
+	local script = Instance.new("LocalScript", Sec_Scripts)
  
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
  
 	script.Parent.Anti_Stomp.MouseButton1Click:Connect(function(Anti_Stomp)
  
@@ -1975,7 +1975,7 @@ end end)
 	end)
  
 	script.Parent.Melee_Reach.MouseButton1Click:Connect(function()
-		for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do
+		for i,v in pairs(game:GetService"Players".LocalPlayer.Character:GetChildren())do
 	    	if v:isA("Tool") then
 	           local a = Instance.new("SelectionBox",v.Handle)
 	           a.Adornee = v.Handle
@@ -1987,7 +1987,7 @@ end end)
 	end)
  
 	script.Parent.Knife_Lockpick.MouseButton1Click:Connect(function(knife_Pick)
-		char = game:GetService('Players').LocalPlayer.Character
+		char = game:GetService("Players").LocalPlayer.Character
 		-------------------------------------
 		function GetKnife()
 			wait(.1)
@@ -2025,14 +2025,14 @@ end end)
 		local Y = char.HumanoidRootPart.CFrame.Y
 		local Z = char.HumanoidRootPart.CFrame.Z
 		GetKnife()
-		repeat GetKnife() until plr.Backpack:FindFirstChild('[Knife]') and plr.Backpack:FindFirstChild('[LockPicker]')
+		repeat GetKnife() until plr.Backpack:FindFirstChild("[Knife]") and plr.Backpack:FindFirstChild("[LockPicker]")
 		char.HumanoidRootPart.CFrame = CFrame.new(X,Y+5,Z)
  
 		end)
 end
 coroutine.wrap(ZVEYJ_fake_script)()
 local function YMXBM_fake_script() -- Exit_5.Destroy 
-	local script = Instance.new('LocalScript', Exit_5)
+	local script = Instance.new("LocalScript", Exit_5)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -2042,9 +2042,9 @@ local function YMXBM_fake_script() -- Exit_5.Destroy
 end
 coroutine.wrap(YMXBM_fake_script)()
 local function ZELIER_fake_script() -- Second_Frame.ATM_Main 
-	local script = Instance.new('LocalScript', Second_Frame)
+	local script = Instance.new("LocalScript", Second_Frame)
  
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
  
 	script.Parent.ATM_1.MouseButton1Click:Connect(function(ATM1)
 		plr.Character.HumanoidRootPart.CFrame = CFrame.new(-446.88, 26.461, -334.28)
@@ -2098,7 +2098,7 @@ local function ZELIER_fake_script() -- Second_Frame.ATM_Main
 end
 coroutine.wrap(ZELIER_fake_script)()
 local function IMFTK_fake_script() -- Exit_6.Destroy 
-	local script = Instance.new('LocalScript', Exit_6)
+	local script = Instance.new("LocalScript", Exit_6)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -2108,7 +2108,7 @@ local function IMFTK_fake_script() -- Exit_6.Destroy
 end
 coroutine.wrap(IMFTK_fake_script)()
 local function RWIV_fake_script() -- Exit_8.Destroy 
-	local script = Instance.new('LocalScript', Exit_8)
+	local script = Instance.new("LocalScript", Exit_8)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -2118,9 +2118,9 @@ local function RWIV_fake_script() -- Exit_8.Destroy
 end
 coroutine.wrap(RWIV_fake_script)()
 local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main 
-	local script = Instance.new('LocalScript', Miscellaneous_2)
+	local script = Instance.new("LocalScript", Miscellaneous_2)
 	
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
 	
 	script.Parent.Target_Box.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLost)
 	local plrss = game:GetService("Players")
@@ -2162,6 +2162,45 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	end 
 	end --length
 	end --prace
+	if prace then 
+	
+	if string.len(player.DisplayName) > string.len(ttext) then
+	if string.sub(player.DisplayName, 1, string.len(ttext)) == ttext then
+	
+	prace = false
+	Target_Box.Text = player.Name
+	local plr2 = game.Players:FindFirstChild(player.Name)
+	Player_Money.Text = "Money: " .. plr2.DataFolder.Currency.Value .. "$"
+	if plr2 ~= nil then
+	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
+	local ids = string.sub(TheId, 14)
+	if TheId ~= nil then
+	StealIDs.Text = "MusicID: " .. ids
+	end
+	end
+	
+	else
+	
+	if player.DisplayName == ttext then
+	
+	prace = false
+	Target_Box.Text = player.Name
+	local plr2 = game.Players:FindFirstChild(player.Name)
+	Player_Money.Text = "Money: " .. plr2.DataFolder.Currency.Value .. "$"
+	if plr2 ~= nil then
+	local TheId = plr2.Character.LowerTorso.BOOMBOXSOUND.SoundId
+	local ids = string.sub(TheId, 14)
+	if TheId ~= nil then
+	StealIDs.Text = "MusicID: " .. ids
+	end
+	end
+	
+	end 
+	
+	end
+	end
+	
+	end
 	end --for
 	end)
 	
@@ -2198,15 +2237,15 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	HeadTPS = not HeadTPS
 	if HeadTPS == true then
 	Lock_Player.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
-	OldX = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
-	OldY = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
-	OldZ = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+	OldX = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.X
+	OldY = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Y
+	OldZ = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Z
 	else
 	Lock_Player.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
 	end
 	
-	game:GetService('RunService').Stepped:connect(function() 
+	game:GetService("RunService").Stepped:connect(function() 
 	if HeadTPS then
 	local Username = script.Parent.Target_Box.Text
 	local plr2 = game.Players:FindFirstChild(Username)
@@ -2220,15 +2259,15 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	anny = not anny
 	if anny == true then
 	Annoy.BackgroundColor3 = Color3.fromRGB(45, 140, 0)
-	OldX = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
-	OldY = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
-	OldZ = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+	OldX = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.X
+	OldY = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Y
+	OldZ = plr.Character:FindFirstChild("HumanoidRootPart").CFrame.Z
 	else
 	Annoy.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldX, OldY, OldZ)
 	end
 	
-	game:GetService('RunService').Stepped:connect(function() 
+	game:GetService("RunService").Stepped:connect(function() 
 	if anny then
 	local Username = script.Parent.Target_Box.Text
 	local plr2 = game.Players:FindFirstChild(Username)
@@ -2277,7 +2316,7 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	localCharacter.LeftHand.LeftWrist:Destroy();
 	localCharacter.RightHand.RightWrist:Destroy();
 	end)
-	game:GetService('RunService').Stepped:connect(function() 
+	game:GetService("RunService").Stepped:connect(function() 
 	if sss then
 	
 	ssc = true
@@ -2308,7 +2347,7 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 	
 	end
 	end)
-	game:GetService('RunService').Stepped:connect(function() 
+	game:GetService("RunService").Stepped:connect(function() 
 	wait(5)
 	pcall(function()
 	localCharacter.LeftHand.LeftWrist:Destroy();
@@ -2326,7 +2365,7 @@ local function VLLQM_fake_script() -- Miscellaneous_2.Misc_Main
 end
 coroutine.wrap(VLLQM_fake_script)()
 local function WRMV_fake_script() -- Exit_9.Destroy 
-	local script = Instance.new('LocalScript', Exit_9)
+	local script = Instance.new("LocalScript", Exit_9)
  
 	script.Parent.MouseButton1Click:Connect(function(Minimize)
 		local Target = script.Parent.Parent
@@ -2336,66 +2375,66 @@ local function WRMV_fake_script() -- Exit_9.Destroy
 end
 coroutine.wrap(WRMV_fake_script)()
 local function XXGRRJ_fake_script() -- Gun_Mod_Menu_Frame.Gun_Main 
-	local script = Instance.new('LocalScript', Gun_Mod_Menu_Frame)
+	local script = Instance.new("LocalScript", Gun_Mod_Menu_Frame)
  
-	plr = game:GetService('Players').LocalPlayer
+	plr = game:GetService("Players").LocalPlayer
  
 	script.Parent.Floating_Shotgun_Shots.MouseButton1Click:Connect(function(FloatingShotgun)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[Shotgun]')
-		local Shotgun = plr.Character:FindFirstChild('[Shotgun]')
+		repeat wait() until plr.Character:FindFirstChild("[Shotgun]")
+		local Shotgun = plr.Character:FindFirstChild("[Shotgun]")
 		Shotgun.Handle.ShootBBGUI:Destroy()
 	end)
  
 	script.Parent.Floating_SMG_Shots.MouseButton1Click:Connect(function(SMGFLOATINGBULLETS)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[SMG]')
-		local SMG = plr.Character:FindFirstChild('[SMG]')
+		repeat wait() until plr.Character:FindFirstChild("[SMG]")
+		local SMG = plr.Character:FindFirstChild("[SMG]")
 		SMG.Handle.ShootBBGUI:Destroy()
 	end)
  
 	script.Parent.Floating_Silencer_Shots.MouseButton1Click:Connect(function(FLOATINGSILENCER)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[Silencer]')
-		local Silencer = plr.Character:FindFirstChild('[Silencer]')
+		repeat wait() until plr.Character:FindFirstChild("[Silencer]")
+		local Silencer = plr.Character:FindFirstChild("[Silencer]")
 		Silencer.Handle.ShootBBGUI:Destroy()
 	end)
  
 	script.Parent.RPG_Square_Rockets.MouseButton1Click:Connect(function()
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[RPG]')
-		local RPG = plr.Character:FindFirstChild('[RPG]')
+		repeat wait() until plr.Character:FindFirstChild("[RPG]")
+		local RPG = plr.Character:FindFirstChild("[RPG]")
 		RPG.Launcher.Mesh:Destroy()
 	end)
  
 	script.Parent.SMG_Silence_Shooting.MouseButton1Click:Connect(function(SMGSILENCESHOOTING)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[SMG]')
-		local SMG = plr.Character:FindFirstChild('[SMG]')
+		repeat wait() until plr.Character:FindFirstChild("[SMG]")
+		local SMG = plr.Character:FindFirstChild("[SMG]")
 		SMG.Handle.ShootSound.Volume = 0
 		SMG.Handle.ShootSound.Volume = 0
 	end)
  
 	script.Parent.Silenced_SMG_Reload.MouseButton1Click:Connect(function(SMGSILENCERELOAD)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[SMG]')
-		local SMG = plr.Character:FindFirstChild('[SMG]')
+		repeat wait() until plr.Character:FindFirstChild("[SMG]")
+		local SMG = plr.Character:FindFirstChild("[SMG]")
 		SMG.Handle.NoAmmo.Volume = 0
 		SMG.Handle.NoAmmo.Volume = 0
 	end)
  
 	script.Parent.Silenced_ShotGun_Reload.MouseButton1Click:Connect(function(SHOTGUNSILENCEDRELOAD)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[Shotgun]')
-		local Shotgun = plr.Character:FindFirstChild('[Shotgun]')
+		repeat wait() until plr.Character:FindFirstChild("[Shotgun]")
+		local Shotgun = plr.Character:FindFirstChild("[Shotgun]")
 		Shotgun.Handle.NoAmmo.Volume = 0
 		Shotgun.Handle.NoAmmo.Volume = 0
 	end)
 	dropmoney = false
 	script.Parent.Silenced_Shotgun.MouseButton1Click:Connect(function(SHOTGUNSILENCEDSHOOT)
 	print("as")
-	repeat wait() until plr.Character:FindFirstChild('Humanoid') or plr.Character:FindFirstChild('xxx')
-	hum = plr.Character:FindFirstChild('Humanoid')
+	repeat wait() until plr.Character:FindFirstChild("Humanoid") or plr.Character:FindFirstChild("xxx")
+	hum = plr.Character:FindFirstChild("Humanoid")
 		dropmoney = not dropmoney
 	print("sa")
 			if dropmoney then
@@ -2404,7 +2443,7 @@ local function XXGRRJ_fake_script() -- Gun_Mod_Menu_Frame.Gun_Main
 			Silenced_Shotgun.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			end
 			while wait() do
-				if plr.Character:FindFirstChild('Humanoid') or plr.Character:FindFirstChild('xxx') then
+				if plr.Character:FindFirstChild("Humanoid") or plr.Character:FindFirstChild("xxx") then
 					wait(.1)
 					if plr.DataFolder.Currency.Value >= 10000 then 
 						local AMT = 10000
@@ -2424,25 +2463,25 @@ local function XXGRRJ_fake_script() -- Gun_Mod_Menu_Frame.Gun_Main
  
 	script.Parent.Silenced_Silencer_Reload.MouseButton1Click:Connect(function(SILENCEDRELOADSILENCER)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[Silencer]')
-		local Silencer = plr.Character:FindFirstChild('[Silencer]')
+		repeat wait() until plr.Character:FindFirstChild("[Silencer]")
+		local Silencer = plr.Character:FindFirstChild("[Silencer]")
 		Silencer.Handle.NoAmmo.Volume = 0
 		Silencer.Handle.NoAmmo.Volume = 0
 	end)
  
 	script.Parent.Silencer_Silence_Shooting.MouseButton1Click:Connect(function(SILENCERSILENCEDSHOOTING)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('[Silencer]')
-		local Silencer = plr.Character:FindFirstChild('[Silencer]')
+		repeat wait() until plr.Character:FindFirstChild("[Silencer]")
+		local Silencer = plr.Character:FindFirstChild("[Silencer]")
 		Silencer.Handle.ShootSound.Volume = 0
 		Silencer.Handle.ShootSound.Volume = 0
 	end)
  
 	script.Parent.Block_Mask.MouseButton1Click:Connect(function(MASKBLOCKY)
 		wait()
-		repeat wait() until plr.Character:FindFirstChild('In-gameMask')
-		local Mask = plr.Character:FindFirstChild('In-gameMask')
-		local Target1 = Mask:FindFirstChild('Handle')
+		repeat wait() until plr.Character:FindFirstChild("In-gameMask")
+		local Mask = plr.Character:FindFirstChild("In-gameMask")
+		local Target1 = Mask:FindFirstChild("Handle")
 		Target1.Parent = game.Lighting
 		for _, maskchildren in pairs(Mask:GetChildren()) do
 		maskchildren.Head.Mesh:Destroy()
